@@ -1,3 +1,5 @@
+// this is an interface and list of stuffs created under the interface that should be used by the entire project since
+// it is in the root of the app folder I believe
 export interface Product {
   id: number;
   name: string;

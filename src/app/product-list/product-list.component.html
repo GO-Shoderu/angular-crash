@@ -1,10 +1,11 @@
 <h2>List of Products</h2>
 
 <div *ngFor="let product of products">
+  
   <h3>
     <a
-      [title]="product.name + ' details'"
-      [routerLink]="['/products', product.id]"
+      [title] = "product.name + ' details'"
+      [routerLink] = "['/products', product.id]"
     >
       {{ product.name }}
     </a>
@@ -12,12 +13,17 @@
 
   <p *ngIf="product.description">Description: {{ product.description }}</p>
 
-  <button type="button" (click)="share()">Share</button>
+  <!-- to create an event binding the event should be in parentheses in our case (click) -->
+  <button type="button" (click)="share()">Share</button> 
 
+  <!-- the data from the product-list is being passed into the product-alert -->
+  <!-- this is possible with the help of the Input imported in the product-alert -->
+  <!-- NB! [product] and (notify) is created in the child (product-alerts) -->
   <app-product-alerts
     [product]="product"
     (notify)="onNotify()"
   ></app-product-alerts>
+
 </div>
 
 <!-- 

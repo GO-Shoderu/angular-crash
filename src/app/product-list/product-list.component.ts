@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+// importing products from the product.ts to be used here ... 
 import { products } from '../products';
 
 @Component({
@@ -8,6 +8,8 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
+  // passing the products imported into our created products variable
+  // because of this definition in the component, the product-list html file can access the products
   products = products;
 
   share() {
